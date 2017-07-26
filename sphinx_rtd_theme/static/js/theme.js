@@ -61,7 +61,7 @@ function ThemeNav () {
             })
 
             // Nav menu link click operations
-            .on('click', ".wy-menu-vertical .current ul li a", function() {
+            .on('click', ".wy-menu-vertical .current ul li a, .wy-menu-vertical ul.current li a", function() {
                 var target = $(this);
                 // Close menu when you click a link.
                 $("[data-toggle='wy-nav-shift']").removeClass("shift");
