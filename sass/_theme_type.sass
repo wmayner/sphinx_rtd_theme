@@ -1,0 +1,31 @@
+// Typography
+
+p
+  margin-bottom: $base-font-size
+
+h2
+  border-bottom: 1px solid $background-accent-color
+  padding-bottom: 10px
+  margin-top: 2*$base-font-size
+
+li
+  line-height: 1.5
+  margin-top: 5px
+  >a.reference.internal > code.literal
+    line-height: 2.25
+
+code
+  border: none
+  border-radius: $highlight-border-radius
+  font-size: 85%
+  &.code-large
+    font-size: 90%
+
+div[class^='highlight']
+  border: none
+  border-radius: $highlight-border-radius
+  background: rgba(27, 31, 35, 0.05)
+  pre
+    font-size: 90%
+    background: none
+    padding: 16px

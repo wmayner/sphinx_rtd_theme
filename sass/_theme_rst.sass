@@ -50,14 +50,16 @@
   .literal-block, pre.literal-block
     @extend .codeblock
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
+  .admonition
     @extend .wy-alert
+    border-radius: $highlight-border-radius
     .last
       margin-bottom: 0
   .admonition-title
     @extend .wy-alert-title
     @extend .fa
     @extend .fa-exclamation-circle
+    border-radius: $highlight-border-radius $highlight-border-radius 0 0
     &:before
       margin-right: 4px
   .note, .seealso
@@ -119,6 +121,11 @@
         display: inline-block
     &:hover .headerlink
       display: inline-block
+    code.xref.py-mod
+      background: none
+      padding-left: 0
+      margin-left: 0
+      font-size: 100%
   
   .centered
     text-align: center
@@ -131,7 +138,8 @@
     margin: 0 0 $base-line-height $base-line-height
     padding: $base-line-height
     background: $sidebar-background-color
-    border: solid 1px $sidebar-border-color
+    border: none
+    border-radius: $highlight-border-radius
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
     p, ul, dl
       font-size: 90%
@@ -141,17 +149,17 @@
       display: block
       font-family: $custom-font-family
       font-weight: bold
-      background: $table-border-color
+      background: $sidebar-title-background-color
       padding: $base-line-height / 4 $base-line-height / 2
       margin: -$base-line-height
       margin-bottom: $base-line-height
       font-size: 100%
+      border-radius: $highlight-border-radius $highlight-border-radius 0 0
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
     background: $highlight-color
     display: inline-block
-    font-weight: bold
-    padding: 0 $base-line-height / 4
+    padding: 0
 
   // These are the little citation links [1] that show up within paragraphs.
   .footnote-reference, .citation-reference
@@ -183,41 +191,51 @@
   table.field-list
     @extend .wy-table
     border: none
+    th
+      padding-top: 5px
     td
       border: none
+      p 
+        line-height: $base-line-height
     td > strong
       display: inline-block
+      margin-top: 0
     .field-name
       padding-right: 10px
       text-align: left
       white-space: nowrap
     .field-body
       text-align: left
+      line-height: 1.5
+      // Fix Python parameter spacing
+      padding-top: 3px 
 
   // These are the "literals" that get spit out when you mark stuff as ``code`` as your write.
   tt, code
     @extend code
     color: $black
-    padding: 2px 5px
+    padding: 0.15em 0.5em
     big, em
       font-size: 100% !important
       line-height: normal
 
     &.literal
-      color: $text-code-color
+      color: inherit
     &.xref, a &
-      font-weight: bold
+      font-weight: normal
       color: $text-codexref-color
   // If the literal is inside an a tag, let's color it like a link
-  a tt, a code
-    color: $link-color
+  a tt, a code, a code.xref
+    color: inherit
+    &:hover
+      text-decoration: underline
   dl
     margin-bottom: $base-line-height
-    dt
-      font-weight: bold
     // Most of the content within these dls are one liners, so I halve the normal margins.
     p, table, ul, ol
       margin-bottom: $base-line-height / 2 !important
+    dt
+      border-radius: $highlight-border-radius
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
@@ -232,11 +250,10 @@
     dt
       display: table
       margin: $base-line-height / 4 0
-      font-size: 90%
       line-height: normal
       background: lighten($class-color, 50%)
       color: $class-color
-      border-top: solid 3px lighten($class-color, 20%)
+      border-left: solid 3px lighten($class-color, 20%)
       padding: $base-line-height / 4
       position: relative
       &:before
@@ -244,6 +261,11 @@
       .headerlink
         color: $text-color
         font-size: 100% !important
+      >.sig-paren
+        font-family: $code-font-family
+        font-size: inherit
+      >em
+        font-size: inherit
     // And this would be the .. method::
     dl dt
       margin-bottom: $base-line-height / 4
@@ -258,14 +280,11 @@
       margin-top: 0
     // Since dts get the callout style, we treat this less as callouts.
     tt, code
-      font-weight: bold
       &.descname, &.descclassname
         background-color: transparent
         border: none
         padding: 0
         font-size: 100% !important
-      &.descname
-        font-weight: bold
     // This is for more advanced parameter control
     .optional
       display: inline-block

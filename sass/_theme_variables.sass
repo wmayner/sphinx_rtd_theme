@@ -8,9 +8,17 @@ $mathjax-color:                       $text-color
 
 $headerlink-color:                    $text-color
 
+$yellow:                              yellow
+
+$highlight-background-color:          #f3f4f4
+$background-accent-color:             #eaecef
+$section-background-color:            $white
+
 // Code colors
 $text-viewcode-color:                 $green
 $text-codexref-color:                 $text-color
+$text-code-color:                     inherit
+$text-code-background-color:          rgba(27, 31, 35, 0.05)
 
 // Definition list colors
 $class-color:                         $blue
@@ -27,7 +35,7 @@ $menu-vertical-background-color:      $section-background-color
 
 // Menu text colors
 $menu-color:                          $gray
-$menu-dark:                           lighten($menu-color,10%) !default
+$menu-dark:                           lighten($menu-color,15%) !default
 $menu-medium:                         lighten($menu-color,25%) !default
 $menu-light:                          lighten($menu-color,45%) !default
 $menu-lighter:                        lighten($menu-color,60%) !default
@@ -49,14 +57,17 @@ $nav-link-color-hover:                lighten($nav-link-color, 6%) !default
 $nav-link-color-alt:                  hsl(33, 100%, 51%)
 
 // Sidebar colors
-$sidebar-background-color:            $table-stripe-color
+$sidebar-background-color:            $text-code-background-color
 $sidebar-border-color:                $table-border-color
-$sidebar-title-background-color:      $table-border-color
+$sidebar-title-background-color:      darken($text-code-background-color, 20%)
 
 // Sphinx highlight color
 $highlight-color:                     $yellow
 
-$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
-$custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
-$custom-font-family2:                 Georgia, serif
-$code-font-family:                    Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+$base-font-family:                    Roboto, "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$custom-font-family:                  Roboto, "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+$custom-font-family2:                 Roboto, Georgia, serif
+$code-font-family:                    "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+
+$highlight-border-radius:             3px
+$table-font-size:                     100%
