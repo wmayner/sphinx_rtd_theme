@@ -30,6 +30,7 @@
     display: inline-block
     line-height: $base-font-size * 2
     padding: 0 $gutter
+    margin-top: 15px
     margin-bottom: 0
     display: block
     font-weight: bold
@@ -41,6 +42,8 @@
   ul
     margin-bottom: 0
   li
+    >a.reference.internal > code.literal
+      line-height: 1.5
     margin-top: 0
     &.divide-top
       border-top: solid 1px hsl(0, 0%, 25%)
