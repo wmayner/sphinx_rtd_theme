@@ -50,7 +50,7 @@
   .literal-block, pre.literal-block
     @extend .codeblock
   // These are the various note pullouts that sphinx applies
-  .admonition
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
     border-radius: $highlight-border-radius
     .last
@@ -126,7 +126,7 @@
       padding-left: 0
       margin-left: 0
       font-size: 100%
-  
+
   .centered
     text-align: center
 
