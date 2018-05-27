@@ -4,9 +4,14 @@
 
 $font-awesome-dir:                    "../fonts/"
 $static-img:                          "../img/"
+
+$nav-content-width:                   900px
+$nav-media-query:                     (($nav-desktop-width) + ($nav-content-width))
+
 $mathjax-color:                       $text-color
 
 $headerlink-color:                    $text-color
+$nav-media-query:                     (($nav-desktop-width) + ($nav-content-width))
 
 $yellow:                              yellow
 
@@ -36,7 +41,7 @@ $menu-vertical-background-color:      $section-background-color
 // Menu text colors
 $menu-color:                          $gray
 $menu-dark:                           lighten($menu-color,10%) !default
-$menu-medium:                         lighten($menu-color,25%) !default
+$menu-medium:                         lighten($menu-color,27.5%) !default
 $menu-light:                          lighten($menu-color,45%) !default
 $menu-lighter:                        lighten($menu-color,60%) !default
 
@@ -44,7 +49,7 @@ $menu-lighter:                        lighten($menu-color,60%) !default
 $menu-link-color:                     $text-color
 $menu-link-dark:                      $text-dark
 $menu-link-medium:                    $text-medium
-$menu-link-light:                     $text-light
+$menu-link-light:                     $text-lighter
 $menu-link-active:                    $white
 
 // Navigation colors
@@ -64,10 +69,10 @@ $sidebar-title-background-color:      darken($text-code-background-color, 20%)
 // Sphinx highlight color
 $highlight-color:                     $yellow
 
-$base-font-family:                    Roboto, "proxima-nova", "Helvetica Neue", Arial, sans-serif
-$custom-font-family:                  Roboto, "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
-$custom-font-family2:                 Roboto, Georgia, serif
-$code-font-family:                    "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+$base-font-family:                    "Roboto", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$custom-font-family:                  "Roboto", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
+$custom-font-family2:                 "Roboto", Georgia, serif
+$code-font-family:                    "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace
 
 $highlight-border-radius:             3px
 $table-font-size:                     100%
